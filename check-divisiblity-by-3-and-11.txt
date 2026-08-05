@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("enter number:");
+    scanf("%d",&n);
+    if(n%3==0)
+    {
+        if(n%11==0)
+        {
+            printf("%d divisble by both 3 and 11",n);
+        }
+        else
+        {
+            printf("%d not divisble by 11",n);
+        }
+    }
+    else
+    {
+        printf("%d not divisble by both 3 and 11",n);
+    }
+}
