@@ -1,0 +1,23 @@
+int main()
+{
+   float salary;
+   float house_rent_allowance;
+   float dearness_allowance;
+   float tax;
+   printf("Enter salary: ");
+   scanf("%f",&salary);
+   printf("Enter house rent allowance: ");
+   scanf("%f",&house_rent_allowance);
+   printf("Enter dearness allowance: ");
+   scanf("%f",&dearness_allowance);
+   printf("Enter tax: ");
+   scanf("%f",&tax);
+   float gross_salary=salary+house_rent_allowance+dearness_allowance;
+   float net_salary=gross_salary-tax;
+   printf("------- SALARY SUMMARY -------");
+   printf("Gross salary : $%.2f\n",gross_salary);
+   printf("net salary : $%.2f\n",net_salary);
+
+   
+    return 0;
+}
