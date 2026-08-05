@@ -1,0 +1,134 @@
+
+#include <stdio.h>
+void inputmarks(int marks[])
+{
+    printf("Enter the marks of the students:");
+    for(int i;i<10;i++)
+    {
+        scanf("%d",&marks[i]);
+    }
+}
+void displaymarks(int marks[])
+{
+    printf("The marks of the student are:");
+    for(int i;i<10;i++)
+    {
+        printf("%d",marks[i]);
+    }
+}
+void calculateaverage(int marks[],int n)
+{
+    int average,sum=0;
+    for(int i=0;i<n;i++)
+    {
+        sum+=marks[i];
+    }
+    average=(float)sum/n;
+    printf("The average of the student is:%d\n",average);
+}
+void countpassstudents(int marks[])
+{
+    int count=0;
+    for(int i=0;i<10;i++)
+    {
+        if(marks[i]>=35)
+        {
+            count++;
+        }
+    }
+    printf("The pass students are:%d\n",count);
+}
+void countfailstudents(int marks[])
+{
+    int count=0;
+    for(int i=0;i<10;i++)
+    {
+        if(marks[i]<35)
+        {
+            count++;
+        }
+    }
+    printf("The fail students are:%d\n",count);
+}
+void findhighest(int marks[])
+{
+    int max=marks[0];
+    for(int i=0;i<10;i++)
+    {
+        if(marks[i]>max)
+        {
+            max=marks[i];
+        }
+    }
+    printf("The highest marks are:%d\n",max);
+}
+void findlowest(int marks[])
+{
+    int min=marks[0];
+    for(int i=0;i<10;i++)
+    {
+        if(marks[i]<min)
+        {
+            min=marks[i];
+        }
+    }
+    printf("The highest marks are:%d\n",min);
+}
+void searchstudentbyroll(int marks[])
+{
+    int roll;
+    printf("Enter the roll number:");
+    scanf("%d",&roll);
+    for(int i=0;i<10;i++)
+    {
+        if(roll==i)
+        {
+            printf("The roll number of the student is:%d\n",roll);
+        }
+    }
+}
+void givegrade(int marks[])
+{
+    for(int i=0;i<10;i++)
+    {
+        if(marks[i]>=90)
+        {
+            printf("[%d]->A-Graade\n",i);
+        }
+        else if(marks[i]>=70&&marks[i]<=80)
+        {
+            printf("[%d]->B-Grade\n",i);
+        }
+        else if(marks[i]>=60&&marks[i]<=70)
+        {
+            printf("[%d]->C-Grade\n",i);
+        }
+        else if(marks[i]>=50&&marks[i]<=60)
+        {
+            printf("[%d]->D-Grade\n",i);
+        }
+        else if(marks[i]>=40&&marks[i]<=50)
+        {
+            printf("[%d]->E-Grade\n",i);
+        }
+        else
+        {
+            printf("[%d]->F-Grade\n",i);
+        }
+        
+    }
+}
+int main()
+{
+    int marks[10];
+    inputmarks(marks);
+    displaymarks(marks);
+    calculateaverage(marks,10);
+    countpassstudents(marks);
+    countfailstudents(marks);
+    findhighest(marks);
+    findlowest(marks);
+    searchstudentbyroll(marks);
+    givegrade(marks);
+    return 0;
+}
