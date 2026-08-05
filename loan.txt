@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main()
+{
+   float salary;
+   int credict_score;
+   int age;
+   printf("Enter salary:");
+   scanf("%f",&salary);
+   printf("Enter credict score:");
+   scanf("%d",&credict_score);
+   printf("Enter age:");
+   scanf("%d",&age);
+   if(salary>=30000 && credict_score>=750 && age>=21)
+   printf("Approved........");
+   else
+   printf("rejected........");
+   
+    return 0;
+}
