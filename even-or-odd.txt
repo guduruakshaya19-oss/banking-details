@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main()
+{
+    int n,result;
+    printf("enter a num:");
+    scanf("%d",&n);
+    result=(n/2)*2;
+    if(result==n)
+    {
+        printf("even");
+    }
+    else
+    {
+        printf("odd");
+    }
+    
+}
