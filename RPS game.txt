@@ -1,0 +1,41 @@
+
+#include <stdio.h>
+
+int main()
+{
+    int player1,player2;
+    printf("enter player1 value:");
+    scanf("%d",&player1);
+    printf("enter player2 value:");
+    scanf("%d",&player2);
+    if(player1==player2)
+    {
+        printf("Draw\n");
+    }
+    else if(player1==1&&player2==2)
+    {
+        printf("player2 is the winner");
+    }
+    else if(player1==1&&player2==3)
+    {
+        printf("player1 is the winner");
+    }
+    else if(player1==2&&player2==1)
+    {
+        printf("player1 is the winner");
+    }
+    else if(player1==2&&player2==3)
+    {
+        printf("player2 is the winner");
+    }
+    else if(player1==3&&player2==1)
+    {
+        printf("player2 is the winner");
+    }
+    else 
+    {
+        printf("player1 is the winner");
+    }
+
+    return 0;
+}
