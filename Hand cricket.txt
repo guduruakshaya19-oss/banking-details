@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+int main()
+{
+    int player_choice;
+    int com_choice;
+    int player_score=0;
+    srand (time(NULL));
+    while(1)
+    {
+        printf("\n-------------------\n");
+        printf("\nHAND CRICKET\n");
+        printf("\n-------------------\n");
+        printf("Enter the player choice(1-6):");
+        scanf("%d",&player_choice);
+        com_choice=rand()%6+1;
+        printf("Computer choice:%d\n",com_choice);
+        if(player_choice==com_choice)
+        {
+            printf("OUT!!!!!\n");
+        }
+        else if(player_choice!=com_choice)
+        {
+            player_score+=player_choice;
+            printf("current score:%d",player_score);
+        }
+    }
+    printf("Final score:%d",player_score);
+    return 0;
+}
