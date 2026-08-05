@@ -1,0 +1,148 @@
+#include <stdio.h>
+int inputMarks(int Marks[],int n);
+int displayMarks(int Marks[],int n);
+float CalculateAverage(int Marks[],int n);
+int findHighest(int Marks[],int n);
+int findLowest(int Marks[],int n);
+int countPassStudents(int Marks[],int n);
+int countFailStudents(int Marks[],int n);
+int searchStudentByRoll(int Marks[],int n);
+int gradeGiven(int Marks[],int n);
+
+int main()
+{
+    int n;
+    printf("enter no of students:");
+    scanf("%d",&n);
+    int Marks[n];
+    inputMarks(Marks,n);
+    displayMarks(Marks,n);
+    CalculateAverage(Marks,n);
+    findHighest(Marks,n);
+    findLowest(Marks,n);
+    countPassStudents(Marks,n);
+    countFailStudents(Marks,n);
+    searchStudentByRoll(Marks,n);
+    gradeGiven(Marks,n);
+}
+    
+    
+int inputMarks(int Marks[],int n)
+{
+        for(int i=0;i<n;i++)
+        {
+        printf("enter marks for each student:");
+        scanf("%d",&Marks[i]);
+        }
+}
+    int displayMarks(int Marks[],int n)
+    {
+        printf("student marks:\n");
+        for(int i=0;i<n;i++)
+        {
+            printf("marks of each student are:%d %d\n",i+1,Marks[i]);
+        }
+    }
+float CalculateAverage(int Marks[],int n)
+{
+    int sum=0;
+    float Average=0;
+    for(int i=0;i<n;i++)
+    {
+        sum=sum+Marks[i];
+        
+    }
+    Average=sum/n;
+    printf("average:%f\n",Average);
+    
+}
+int findHighest(int Marks[],int n)
+{
+    int highest=Marks[0];
+    for(int i=1;i<n;i++)
+    {
+        if(Marks[i]>highest)
+        highest=Marks[i];
+    }
+    printf("highest:%d\n",highest);
+}
+int findLowest(int Marks[],int n)
+{
+    int lowest=Marks[0];
+    for(int i=1;i<n;i++)
+    {
+        if(Marks[i]<lowest)
+        lowest=Marks[i];
+    }
+    printf("lowest:%d\n",lowest);
+}
+int countPassStudents(int Marks[],int n)
+{
+    int count=0;
+    for(int i=0;i<n;i++)
+    {
+        if(Marks[i]>35)
+        {
+            count++;
+        }
+    }
+    printf("pass students:%d\n",count);
+}
+int countFailStudents(int Marks[],int n)
+{
+    int count=0;
+    for(int i=0;i<n;i++)
+    {
+        if(Marks[i]<35)
+        {
+            count++;
+        }
+    }
+    printf("fail students:%d\n",count);
+}
+int searchStudentByRoll(int Marks[],int n)
+{
+    int Rollno;
+    printf("Enter your Roll no:");
+    scanf("%d",&Rollno);
+    for(int i=0;i<n;i++)
+    {
+        if(Rollno==i+1)
+        {
+            printf("Rollno:%d\n Marks:%d",Rollno,Marks[i]);
+        }
+    }
+    printf("Invalid rollno");
+}
+int gradeGiven(int Marks[],int n)
+{
+    for(int i=0;i<n;i++)
+
+    {
+        if(Marks[i]>=90 && Marks[i]<=100)
+    {
+        printf("grade:A");
+    }
+    else if(Marks[i]>=75)
+    {
+        printf("grade:B");
+    }
+    else if(Marks[i]>=55)
+    {
+        printf("grade:C");
+    }
+    else if(Marks[i]>=45)
+    {
+        printf("grade:D");
+    }
+    else if(Marks[i]>=35)
+    {
+        printf("grade:E");
+    }
+    else
+    {
+        printf("grade:F");
+    }
+    }
+}
+    
