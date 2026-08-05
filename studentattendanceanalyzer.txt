@@ -1,0 +1,147 @@
+
+#include <stdio.h>
+void inputattendance(int att[5][5])
+{
+	printf("Enter the attendance of the students:\n");
+	for(int i=0; i<5; i++)
+	{
+		for(int j=0; j<5; j++)
+		{
+			scanf("%d",&att[i][j]);
+		}
+	}
+}
+void displayattendance(int att[5][5])
+{
+	printf("The attendance of the students:\n");
+	for(int i=0; i<5; i++)
+	{
+		for(int j=0; j<5; j++)
+		{
+			printf("%d ",att[i][j]);
+		}
+		printf("\n");
+	}
+}
+void totalpresent(int att[5][5])
+{
+	int sum;
+	for(int i=0; i<5; i++)
+	{
+		int count=0;
+		for(int j=0; j<5; j++)
+		{
+		    if(att[i][j]==1)
+		    {
+		        count++;
+		    }
+		}
+		sum=count;
+		printf("The total present of the each day:\n");
+		printf("[%d]->%d\n",i,sum);
+	}
+}
+void totalabsent(int att[5][5])
+{
+    int sum;
+    for(int i=0;i<5;i++)
+    {
+        int count=0;
+        for(int j=0;j<5;j++)
+        {
+            if(att[i][j]==0)
+            {
+                count++;
+            }
+        }
+        sum=count;
+        printf("The total absenties of the each day:\n");
+        printf("[%d]->%d\n",i,sum);
+    }
+}
+void highestattendance(int att[5][5])
+{
+    int max=0;
+    for(int i=0;i<5;i++)
+    {
+        int count=0;
+        for(int j=0;j<5;j++)
+        {
+            if(att[i][j]==1)
+            {
+                count++;
+            }
+        }
+        if(count>max)
+        {
+            max=count;
+        }
+    }
+    printf("The student %d has the highest attendance\n");
+}
+void lowestattendance(int att[5][5])
+{
+    int min=0;
+    for(int i=0;i<5;i++)
+    {
+        int count=0;
+        for(int j=0;j<5;j++)
+        {
+            if(att[i][j]==1)
+            {
+                count++;
+            }
+        }
+        if(count<min)
+        {
+            min=count;
+        }
+    }
+    printf("The student %d has the lowest attendance\n");
+}
+void attendancegrade(int att[5][5])
+{
+    for(int i=0;i<5;i++)
+    {
+        int count=0;
+        for(int j=0;j<5;j++)
+        {
+            if(att[i][j]==1)
+            {
+                count++;
+            }
+        }
+        if(count==5)
+        {
+            printf("[%d]->A-Grade\n",i);
+        }
+        else if(count==4)
+        {
+            printf("[%d]->B-Grade\n",i);
+        }
+        else if(count==3)
+        {
+            printf("[%d]->C-Grade\n",i);
+        }
+        else if(count==2)
+        {
+            printf("[%d]->D-Grade\n",i);
+        }
+        else
+        {
+            printf("[%d]->E-Grade\n",i);
+        }
+    }
+}
+int main()
+{
+    int att[5][5];
+    inputattendance(att);
+    displayattendance(att);
+    totalpresent(att);
+    totalabsent(att);
+    highestattendance(att);
+    lowestattendance(att);
+    attendancegrade(att);
+	return 0;
+}
