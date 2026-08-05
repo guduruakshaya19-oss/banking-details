@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main()
+{
+   int age;
+   printf("Enter your age:");
+   scanf("%d",&age);
+   if(age>0 && age<=13)
+   printf("Content category: child");
+   else if(age>13 && age<=18)
+   printf("Content category: teen");
+   else
+   printf("Content category: adult");
+    return 0;
+}
